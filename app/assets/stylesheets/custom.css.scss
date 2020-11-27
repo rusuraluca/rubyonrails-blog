@@ -1,0 +1,14 @@
+@import "bootstrap/scss/bootstrap";
+
+.center {
+  text-align: center;
+}
+.jumbotron {
+  background-image: asset-url('image.jpeg');
+  background-size: cover;
+  height: 550px;
+}
+
+.bg-custom {
+  background-color: #004854;
+}
