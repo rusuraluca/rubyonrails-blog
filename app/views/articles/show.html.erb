@@ -1,15 +1,12 @@
-<div class="jumbotron-fluid center">
-
-<h1> Showing selected article </h1>
-
-<p>
-  Ttile: <%= @article.title %>
-</p>
-
-<p>
-  Description: <%= @article.description %>
-</p>
-
-<%= link_to 'Edit this article', edit_article_path(@article) %> |
-<%= link_to 'Back to article listing', articles_path %>
+<div class="jumbotron formjumbotron" style="margin-left: auto; margin-right: auto; width: 700px; background-color: transparent" >
+  <div class="card">
+    <h2 class="card-header"> Title: <%= @article.title %> </h2>
+    <div class="card-body">
+      <h3 class="card-title"> Description: </h3>
+      <h5 class="card-text"> <%= @article.description %> </h5>
+      <%= link_to 'Edit this article', edit_article_path(@article), class: 'btn btn-primary' %>
+      <%= link_to 'Delete this article', articles_path, method: :delete, data: { confirm:"Are you sure you want to delete the article?"}, class: 'btn btn-danger'%>
+      <%= link_to 'Back to article listing', articles_path, class: 'btn btn-secondary'%>
+    </div>
+  </div>
 </div>

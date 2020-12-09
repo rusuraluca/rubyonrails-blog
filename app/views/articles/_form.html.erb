@@ -1,14 +1,6 @@
 <div class="jumbotron formjumbotron" style="margin-left: auto; margin-right: auto; width: 700px;" >
-    <% if @article.errors.any? %>
-      <div class="text-left alert alert-danger" role="alert">
-        <p>The following error prevented the article from getting created</p>
-        <ul>
-          <% @article.errors.full_messages.each do |msg| %>
-            <li> <%= msg %> </li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+
+    <%= render 'shared/errors', obj: @article %>
     <%= form_for @article do |f| %>
     <div class="center form-group">
     </div>
@@ -27,6 +19,6 @@
       </div>
     <% end %>
     <div>
-      [ <%= link_to 'Cancel creating and return back to article listing', articles_path %> ]
+      <%= link_to 'Cancel creating and return back to article listing', articles_path, class: 'btn btn-secondary' %>
     </div>
 </div>
